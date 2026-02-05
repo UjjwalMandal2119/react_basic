@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 
 let x="ujjwal";
@@ -7,17 +7,18 @@ let array =["user1", "user2", "user3", "user4", "user5"];
 let data = "boy";
 
 const App = () => {
-  let x=0;
+  // react only show changes when state changes
+  const [x, setx] =useState(0);
 
   const btnClick= () =>{
     console.log("clicked");
-    x++;
+    setx(x+1);
     console.log(x);
   }
   return (
     <div>
     <Navbar/>
-    {x}
+   
     {/* display things */}
     {x}
     {/* map function using */}

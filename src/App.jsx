@@ -8,6 +8,8 @@ let array =["user1", "user2", "user3", "user4", "user5"];
 let data = "boy";
 
 const App = () => {
+
+  const [data, setData] =useState([])
   const inputRef =useRef(null)
   // react only show changes when state changes for this we use useState
   const [x, setx] =useState(0);
@@ -37,7 +39,8 @@ const App = () => {
 
     <input ref={inputRef} type='text'></input>
     <button onClick={()=>{console.log(inputRef.current.value);}}>Submit</button>
-    <button onClick={()=>{console.log(inputRef);}}>Submit1</button>
+    <button onClick={()=>{setData([...data,inputRef.current.value])}}>Submit1</button>
+    {data.map((item,index) =>{return <h2 key={index}>{item}</h2>})}
    
     </div>
   )
